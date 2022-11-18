@@ -196,10 +196,10 @@ fn decode(path: impl AsRef<Path>) {
         // 1652024669524708 key release 36
         let mut split_iter = line.split_whitespace();
 
-        let _timestamp = split_iter.next().unwrap();
-        let _key_keyword = split_iter.next().unwrap(); // redundant
+        let _timestamp = split_iter.next().unwrap(); // 1652024669524708
+        let _key_keyword = split_iter.next().unwrap(); // key
         let operation = split_iter.next().unwrap(); // "press" or "release"
-        let keycode = split_iter.next().unwrap();
+        let keycode = split_iter.next().unwrap(); // 36
 
         if operation == "press" {
             let keycode = keycode.parse::<u8>().expect("Could not parse keycode");
